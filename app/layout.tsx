@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar"; // Navbar ইম্পোর্ট
+import Footer from "@/components/Footer"; // Footer ইম্পোর্ট
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,11 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={inter.className}>
+        {/* এখানে Navbar বসানো হলো */}
+        <Navbar /> 
+                {/* এখানে Navbar বসানো হলো */}
+        <Footer /> 
+        
+        {/* এই চিলড্রেন হলো বাকি সব পেজের কন্টেন্ট */}
         {children}
       </body>
     </html>
   );
+
 }
