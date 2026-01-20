@@ -1,6 +1,8 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import Navbar from "@/components/Navbar"; // Navbar ইম্পোর্ট
+import Footer from "@/components/Footer"; // Footer ইম্পোর্ট
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,6 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* এখানে Navbar বসানো হলো */}
+        <Navbar /> 
+                {/* এখানে Navbar বসানো হলো */}
+        <Footer /> 
         
         {/* এই চিলড্রেন হলো বাকি সব পেজের কন্টেন্ট */}
         {children}

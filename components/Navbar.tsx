@@ -32,8 +32,9 @@ export default function Navbar() {
           Contact
         </Link>
 
-        {/* Shadcn বাটন */}
-        <Button>Login</Button>
+        <Button asChild>
+              <Link href="/login">Login</Link>
+            </Button>
       </div>
     </nav>
   );
